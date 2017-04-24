@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name = "description" content="">
+  	<meta name = "author" content="">
+  	<title>Task Manager</title>
+  	<!-- Favicon -->
+  	<link rel="icon" type="image/png" href="./images/favicon.png" />
+  	<!-- Bootstrap min css -->
+  	<link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  	<!-- Custom css -->
+  	<link href = "./css/custom.css" rel="stylesheet">
+  	<!-- Font awesome css -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  	<!-- jquery css -->
+  	<link rel="stylesheet" href="./css/jquery.ui.min.css" />
+    <!-- Google font styles -->
+  	<link href ="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,600" rel="stylesheet" type="text/css">
+  	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<!-- jquery min js -->
+  	<script type = "text/javascript" src="./js/jquery.ui.min.js"></script>
+  	<!-- Bootstrap min js -->
+  	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+  		<nav class="navbar navbar-fixed-top navbar-inverse">
+  			<div class="container-fluid container">
+          <h1>TASK MANAGER</h1>
+  			</div>
+  		</nav>
+  	</header>
+    <div id="main">
+      <div class="container task-wrapper">
+      	<div class="row center">
+          <!-- Add a task -->
+          <div class="col-md-3">
+      			<div class="task-list">
+      			  <h3>Add a task</h3>
+      			  <form id="todo-form">
+        				<input type="text" placeholder="Title" />
+        				<textarea placeholder="Descrtipion"></textarea>
+        				<input type="text" id="datepicker" placeholder="Due Date (mm/dd/yyyy)" />
+        				<input type="button" class="add-task-btn btn btn-primary" value="Add Task" onclick="todo.add();" />
+      			  </form>
+              <input type="button" class="clear-task-btn btn btn-primary" value="Clear All Tasks" onclick="todo.clear();" />
+              <div class="delete-container">
+                <i class="fa fa-trash-o"></i>
+        			  <div id="delete-div">Drag Here to Delete</div>
+              </div>
+      			</div>
+      		</div>
+
+          <!-- Panding tasks -->
+      		<div class="col-md-3">
+      			<div class="task-list task-container" id="pending">
+      				<h3>Pending</h3>
+      			</div>
+      		</div>
+
+          <!-- Tasks in progress -->
+      		<div class="col-md-3">
+      			<div class="task-list task-container" id="inProgress">
+      			  <h3>In Progress</h3>
+      			</div>
+      		</div>
+
+          <!-- Tasks completed -->
+      		<div class="col-md-3">
+      			<div class="task-list task-container" id="completed">
+      			  <h3>Completed</h3>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+      <div class="clearfix"></div>
+
+      <!-- Footer -->
+      <footer>
+      </footer>
+    </div><!-- End #main -->
+  </body>
+</html>
+
+<!-- Task Manager js -->
+<script type="text/javascript" src="./js/task-manager.js"></script>
+
+<!-- Date picker js -->
+<script type="text/javascript">
+	$("#datepicker").datepicker();
+	$("#datepicker").datepicker("option", "dateFormat", "mm/dd/yy");
+	$(".task-container").droppable();
+	$(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+	todo.init();
+</script>

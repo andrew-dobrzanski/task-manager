@@ -1,0 +1,174 @@
+/* Body */
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #555;
+	font-size: 16px;
+	position: absolute;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  background-image: url(http://www.myraspberrypiandi.site/images/overlay-pattern.png);
+  background-position: top center;
+  top: 0;
+  left: 0;
+}
+
+a {
+	color: #72c02c;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+	font-size: 36px;
+	color: #eee;
+}
+
+#main {
+	margin-top: 160px;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+/* Navigation */
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: #080808;
+    color: #72c02c;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+    color: #eee;
+}
+
+.navbar-nav {
+  float: right;
+  margin: 30px 40px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-nav {
+		float: left;
+		margin: 0px;
+	}
+	.navbar-brand img {
+		display: block;
+		width: 180px;
+	}
+	.navbar-header {
+		padding-bottom: 20px;
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+		color: #eee;
+	}
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+		color: #72c02c;
+	}
+}
+
+.navbar-brand {
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+	height: 100%;
+}
+
+/* Task Manager */
+.task-list {
+  width: 250px;
+  float: left;
+  margin: 10px 5px;
+  background-color: #e3e3e3;
+  min-height: 490px;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+
+.task-list input, .task-list textarea {
+  width: 240px;
+  margin: 1px 5px;
+}
+
+.task-list input {
+  height: 30px;
+}
+
+.todo-task {
+  border-radius: 5px;
+  background-color: #fff;
+  width: 230px;
+  margin: 10px;
+  padding: 5px;
+  z-index: 999;
+}
+
+.todo-task:hover {
+  cursor: move;
+}
+
+.task-list input[type="button"] {
+  width: 240px;
+  margin: 5px;
+}
+
+.todo-task > .task-header {
+  font-weight: bold;
+}
+
+.todo-task > .task-date {
+  font-size: small;
+  font-style: italic;
+}
+
+.todo-task > .task-description {
+  font-size: smaller;
+}
+
+.add-task-btn, .clear-task-btn {
+  border-radius: 0px;
+  padding: 25px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+#delete-div {
+  background-color: #fff;
+  border: 3px dotted #000;
+  margin: 10px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
+
+#todo-form {
+	margin-bottom: -5px;
+}
+
+.delete-container .fa-trash-o {
+  font-size: 40px;
+  margin-top: 40px;
+}
